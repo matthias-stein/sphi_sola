@@ -18,7 +18,7 @@ with codecs.open("README.rst", encoding="utf-8") as hndl:
     desc += hndl.read()
 
 with codecs.open("HISTORY.rst", encoding="utf-8") as hndl:
-    desc += '\n'
+    desc += '\n\n\n'
     desc += hndl.read()
 
 setup(
@@ -32,6 +32,7 @@ setup(
         "sphi_sola"
     ],
     include_package_data=True,
+    url="https://github.com/matthias-stein/sphi_sola",
     entry_points={
         "sphinx.html_themes": [
             "sphi_sola = sphi_sola"
