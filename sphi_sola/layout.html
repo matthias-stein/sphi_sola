@@ -10,19 +10,42 @@
 {% block relbar2 %}{% endblock %}
 
 
-
 {% macro nav() %}
-    <p>
-        {%- if prev %}
-        «&#160;&#160;<a href="{{ prev.link|e }}">{{ prev.title }}</a>
-        &#160;&#160;::&#160;&#160;
-        {%- endif %}
-        <a class="uplink" href="{{ pathto(master_doc) }}">{{ _('Contents') }}</a>
-        {%- if next %}
-        &#160;&#160;::&#160;&#160;
-        <a href="{{ next.link|e }}">{{ next.title }}</a>&#160;&#160;»
-        {%- endif %}
-    </p>
+        <div class="nav_prev">
+            &nbsp;
+            {%- if prev %}
+                <
+            {%- endif %}
+        </div>
+        <div class="nav_item">
+            {%- if prev %}
+                <a href="{{ prev.link|e }}">{{ prev.title }}</a>
+            {%- endif %}
+        </div>
+        <div class="nav_spacer">
+            {%- if prev %}
+                ::
+            {%- endif %}
+        </div>
+        <div class="nav_content">
+            <a class="uplink" href="{{ pathto(master_doc) }}">{{ _('Contents') }}</a>
+        </div>
+        <div class="nav_spacer">
+            {%- if next %}
+                ::
+            {%- endif %}
+        </div>
+        <div class="nav_item">
+            {%- if next %}
+                <a href="{{ next.link|e }}">{{ next.title }}</a>
+            {%- endif %}
+        </div>
+        <div class="nav_next">
+            {%- if next %}
+                >
+            {%- endif %}
+            &nbsp;
+        </div>
 {% endmacro %}
 
 
